@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Head, Link, usePage, router } from '@inertiajs/react';
 
-export default function AppLayout({ children, title = 'مارسيتايم - نظام إدارة المخزون' }) {
+export default function AppLayout({ children, title = 'marcetime - نظام إدارة المخزون' }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -113,7 +113,10 @@ export default function AppLayout({ children, title = 'مارسيتايم - نظ
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col">
-            <Head title={`${title} - ${user?.name || 'مارسيتايم'}`} />
+            <Head title={`${title} - ${user?.name || 'marcetime'}`}>
+                <link rel="icon" type="image/png" href="/images/logo.png" />
+                <meta name="description" content="نظام إدارة المخزون والأرباح - marcetime" />
+            </Head>
 
             {/* Header */}
             <header className="bg-white border-b border-gray-200 shadow-sm backdrop-blur-md bg-opacity-95 sticky top-0 z-50">
@@ -134,14 +137,16 @@ export default function AppLayout({ children, title = 'مارسيتايم - نظ
                             )}
 
                             <div className="flex items-center space-x-2 sm:space-x-3 space-x-reverse">
-                                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-                                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                                    </svg>
+                                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-xl flex items-center justify-center shadow-lg border-2 border-gray-100 backdrop-blur-sm overflow-hidden">
+                                    <img
+                                        src="/images/logo.png"
+                                        alt="marcetime logo"
+                                        className="w-full h-full object-cover rounded-xl"
+                                    />
                                 </div>
                                 <div className="hidden xs:block sm:block">
                                     <h1 className="text-xs sm:text-sm font-semibold text-gray-900">
-                                        مارسيتايم - {user?.name || 'إدارة النظام'}
+                                        marcetime - {user?.name || 'إدارة النظام'}
                                     </h1>
                                     <p className="text-xs text-gray-500 hidden sm:block">{getCurrentPageInfo().name}</p>
                                 </div>
@@ -214,13 +219,15 @@ export default function AppLayout({ children, title = 'مارسيتايم - نظ
                         <div className="p-3 sm:p-4 border-b border-gray-100 flex-shrink-0">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center space-x-2 sm:space-x-3 space-x-reverse">
-                                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                                        <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                                        </svg>
+                                    <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl flex items-center justify-center border-2 border-blue-200 shadow-lg backdrop-blur-sm overflow-hidden">
+                                        <img
+                                            src="/images/logo.png"
+                                            alt="marcetime logo"
+                                            className="w-full h-full object-cover rounded-xl"
+                                        />
                                     </div>
                                     <div>
-                                        <h2 className="text-sm sm:text-sm font-semibold text-gray-900">مارسيتايم</h2>
+                                        <h2 className="text-sm sm:text-sm font-semibold text-gray-900">marcetime</h2>
                                         <p className="text-xs text-gray-500">نظام إدارة المخزون</p>
                                     </div>
                                 </div>

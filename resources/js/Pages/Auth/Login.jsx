@@ -8,29 +8,14 @@ export default function Login() {
         remember: false,
     });
 
-    const [showTestUsers, setShowTestUsers] = useState(true);
-
     const submit = (e) => {
         e.preventDefault();
         post('/login');
     };
 
-    const testUsers = [
-        { name: 'مصطفى (المدير)', email: 'mustafa@marcetime.com', password: '123456', role: 'مدير - 70% أرباح' },
-        { name: 'دنيا (الشريك)', email: 'donia@marcetime.com', password: '123456', role: 'شريك - 30% أرباح' }
-    ];
-
-    const fillTestUser = (user) => {
-        setData({
-            ...data,
-            email: user.email,
-            password: user.password
-        });
-    };
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4">
-            <Head title="تسجيل الدخول - مارسيتايم" />
+            <Head title="تسجيل الدخول - marcetime" />
 
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
@@ -50,13 +35,19 @@ export default function Login() {
 
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-75"></div>
-                            <svg className="w-10 h-10 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                            </svg>
+                        <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl border border-white/30 overflow-hidden">
+                            <img
+                                src="/images/logo.png"
+                                alt="marcetime logo"
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                    console.log('Logo failed to load:', e.target.src);
+                                    e.target.style.display = 'none';
+                                }}
+                                onLoad={() => console.log('Logo loaded successfully')}
+                            />
                         </div>
-                        <h1 className="text-3xl font-bold text-white mb-3">مارسيتايم</h1>
+                        <h1 className="text-3xl font-bold text-white mb-3">marcetime</h1>
                         <p className="text-white/70 text-lg">نظام إدارة المخزون ونقطة البيع</p>
                     </div>
 
@@ -140,52 +131,6 @@ export default function Login() {
                             </span>
                         </button>
                     </form>
-
-                    {/* Test Users Section */}
-                    {showTestUsers && (
-                        <div className="mt-8 pt-6 border-t border-white/20">
-                            <p className="text-sm text-white/60 text-center mb-4">حسابات تجريبية للاختبار:</p>
-                            <div className="space-y-3">
-                                {testUsers.map((user, index) => (
-                                    <button
-                                        key={index}
-                                        type="button"
-                                        onClick={() => fillTestUser(user)}
-                                        className="w-full text-right p-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300 group relative overflow-hidden"
-                                    >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                        <div className="flex justify-between items-center relative">
-                                            <div>
-                                                <p className="font-medium text-white">{user.name}</p>
-                                                <p className="text-sm text-white/60">{user.role}</p>
-                                            </div>
-                                            <div className="text-left">
-                                                <p className="text-sm text-white/50" dir="ltr">{user.email}</p>
-                                                <p className="text-xs text-white/40" dir="ltr">123456</p>
-                                            </div>
-                                        </div>
-                                    </button>
-                                ))}
-                            </div>
-                            <button
-                                onClick={() => setShowTestUsers(false)}
-                                className="w-full mt-4 text-xs text-white/40 hover:text-white/60 transition-colors duration-200"
-                            >
-                                إخفاء الحسابات التجريبية
-                            </button>
-                        </div>
-                    )}
-
-                    {!showTestUsers && (
-                        <div className="mt-6 text-center">
-                            <button
-                                onClick={() => setShowTestUsers(true)}
-                                className="text-sm text-white/50 hover:text-white/70 transition-colors duration-200"
-                            >
-                                عرض الحسابات التجريبية
-                            </button>
-                        </div>
-                    )}
                 </div>
             </div>
         </div>
