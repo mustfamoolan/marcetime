@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-export default function PWAInstallPrompt() {
+export default function PWAInstallPrompt({ onDismiss }) {
     const [deferredPrompt, setDeferredPrompt] = useState(null);
-    const [showInstallPrompt, setShowInstallPrompt] = useState(false);
     const [isIOS, setIsIOS] = useState(false);
     const [isInStandaloneMode, setIsInStandaloneMode] = useState(false);
 
@@ -15,53 +14,42 @@ export default function PWAInstallPrompt() {
         const standalone = window.matchMedia('(display-mode: standalone)').matches;
         setIsInStandaloneMode(standalone);
 
-        // Only show prompt if not already installed
-        if (!standalone) {
-            // For Android Chrome
-            const handleBeforeInstallPrompt = (e) => {
-                e.preventDefault();
-                setDeferredPrompt(e);
-                setShowInstallPrompt(true);
-            };
+        console.log('PWA Device Info:', { iOS, standalone });
 
-            window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        // For Android Chrome - listen for install prompt
+        const handleBeforeInstallPrompt = (e) => {
+            console.log('beforeinstallprompt fired');
+            e.preventDefault();
+            setDeferredPrompt(e);
+        };
 
-            // For iOS - show manual install instructions
-            if (iOS && !standalone) {
-                setTimeout(() => {
-                    setShowInstallPrompt(true);
-                }, 2000); // Show after 2 seconds
-            }
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
-            return () => {
-                window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-            };
-        }
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
     }, []);
 
     const handleInstall = async () => {
         if (deferredPrompt) {
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
+            console.log('Install prompt result:', outcome);
             if (outcome === 'accepted') {
                 setDeferredPrompt(null);
-                setShowInstallPrompt(false);
+                if (onDismiss) onDismiss();
             }
         }
     };
 
     const handleDismiss = () => {
-        setShowInstallPrompt(false);
         // Don't show again for this session
         sessionStorage.setItem('pwa-install-dismissed', 'true');
+        if (onDismiss) onDismiss();
     };
 
-    // Don't show if already dismissed in this session
-    if (sessionStorage.getItem('pwa-install-dismissed') === 'true') {
-        return null;
-    }
-
-    if (!showInstallPrompt || isInStandaloneMode) {
+    // Don't show if already dismissed in this session or if already installed
+    if (sessionStorage.getItem('pwa-install-dismissed') === 'true' || isInStandaloneMode) {
         return null;
     }
 

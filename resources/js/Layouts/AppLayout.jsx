@@ -42,20 +42,38 @@ export default function AppLayout({ children, title = 'marcetime - نظام إد
 
     // PWA Install Prompt Logic
     useEffect(() => {
-        // Show PWA install prompt after user is logged in and app is installable
-        if (user && isInstallable && !isInstalled) {
+        // Show PWA install prompt after user is logged in
+        if (user && !isInstalled) {
             const hasShownPrompt = sessionStorage.getItem('pwa-prompt-shown');
-            if (!hasShownPrompt) {
-                // Show prompt after 3 seconds of being on dashboard
+            const hasDismissed = sessionStorage.getItem('pwa-install-dismissed');
+
+            console.log('PWA Check:', {
+                user: !!user,
+                isInstalled,
+                isInstallable,
+                hasShownPrompt,
+                hasDismissed
+            });
+
+            if (!hasShownPrompt && !hasDismissed) {
+                // Show prompt after 2 seconds of being logged in
                 const timer = setTimeout(() => {
+                    console.log('Showing PWA prompt');
                     setShowPWAPrompt(true);
                     sessionStorage.setItem('pwa-prompt-shown', 'true');
-                }, 3000);
+                }, 2000);
 
                 return () => clearTimeout(timer);
             }
         }
     }, [user, isInstallable, isInstalled]);
+
+    // Test function to force show PWA prompt (temporary)
+    const testPWAPrompt = () => {
+        sessionStorage.removeItem('pwa-prompt-shown');
+        sessionStorage.removeItem('pwa-install-dismissed');
+        setShowPWAPrompt(true);
+    };
 
     const navigation = [
         {
@@ -209,6 +227,17 @@ export default function AppLayout({ children, title = 'marcetime - نظام إد
                             >
                                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                            </button>
+
+                            {/* PWA Test Button - مؤقت للاختبار */}
+                            <button
+                                onClick={testPWAPrompt}
+                                className="p-1.5 sm:p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20"
+                                title="اختبار PWA"
+                            >
+                                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                                 </svg>
                             </button>
                         </div>
@@ -368,7 +397,7 @@ export default function AppLayout({ children, title = 'marcetime - نظام إد
 
             {/* PWA Install Prompt */}
             {showPWAPrompt && (
-                <PWAInstallPrompt />
+                <PWAInstallPrompt onDismiss={() => setShowPWAPrompt(false)} />
             )}
         </div>
     );
