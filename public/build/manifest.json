@@ -1,0 +1,230 @@
+{
+  "_AppLayout-DpXWN4zK.js": {
+    "file": "assets/AppLayout-DpXWN4zK.js",
+    "name": "AppLayout",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_ClockIcon-DMFs0O7_.js": {
+    "file": "assets/ClockIcon-DMFs0O7_.js",
+    "name": "ClockIcon",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_CurrencyDollarIcon-hN7WoX3h.js": {
+    "file": "assets/CurrencyDollarIcon-hN7WoX3h.js",
+    "name": "CurrencyDollarIcon",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DIPmV67n.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/Pages/Auth/Login.jsx": {
+    "file": "assets/Login-CSxvqSFv.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Auth/Login.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Balance/Index.jsx": {
+    "file": "assets/Index-Bv5sCqHJ.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Balance/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js",
+      "_ClockIcon-DMFs0O7_.js"
+    ]
+  },
+  "resources/js/Pages/Balance/Withdrawals.jsx": {
+    "file": "assets/Withdrawals-CX4khKD_.js",
+    "name": "Withdrawals",
+    "src": "resources/js/Pages/Balance/Withdrawals.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js",
+      "_ClockIcon-DMFs0O7_.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard.jsx": {
+    "file": "assets/Dashboard-eebj_L94.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Debts/Index.jsx": {
+    "file": "assets/Index-CaecPCXJ.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Debts/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Debts/Show.jsx": {
+    "file": "assets/Show-Q7zHaU8k.js",
+    "name": "Show",
+    "src": "resources/js/Pages/Debts/Show.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Products/Create.jsx": {
+    "file": "assets/Create-DxnLa-F_.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Products/Create.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Products/Edit.jsx": {
+    "file": "assets/Edit-ag5um8iT.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Products/Edit.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Products/Index.jsx": {
+    "file": "assets/Index-CgJBdMRZ.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Products/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Products/Show.jsx": {
+    "file": "assets/Show-C6kre55-.js",
+    "name": "Show",
+    "src": "resources/js/Pages/Products/Show.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Reports/Debt.jsx": {
+    "file": "assets/Debt-DcPo9K9k.js",
+    "name": "Debt",
+    "src": "resources/js/Pages/Reports/Debt.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Reports/Index.jsx": {
+    "file": "assets/Index-DGeWFR6j.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Reports/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js",
+      "_CurrencyDollarIcon-hN7WoX3h.js",
+      "_ClockIcon-DMFs0O7_.js"
+    ]
+  },
+  "resources/js/Pages/Reports/Product.jsx": {
+    "file": "assets/Product-gM-C3Bzr.js",
+    "name": "Product",
+    "src": "resources/js/Pages/Reports/Product.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Reports/Profit.jsx": {
+    "file": "assets/Profit-D2rnK8ct.js",
+    "name": "Profit",
+    "src": "resources/js/Pages/Reports/Profit.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Reports/Sales.jsx": {
+    "file": "assets/Sales-CAtea7MH.js",
+    "name": "Sales",
+    "src": "resources/js/Pages/Reports/Sales.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js",
+      "_CurrencyDollarIcon-hN7WoX3h.js"
+    ]
+  },
+  "resources/js/Pages/Reports/Seller.jsx": {
+    "file": "assets/Seller-DJ7SxGt9.js",
+    "name": "Seller",
+    "src": "resources/js/Pages/Reports/Seller.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/Pages/Sales/POS.jsx": {
+    "file": "assets/POS-BPt9LNWi.js",
+    "name": "POS",
+    "src": "resources/js/Pages/Sales/POS.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AppLayout-DpXWN4zK.js"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DlAS7V7A.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Auth/Login.jsx",
+      "resources/js/Pages/Balance/Index.jsx",
+      "resources/js/Pages/Balance/Withdrawals.jsx",
+      "resources/js/Pages/Dashboard.jsx",
+      "resources/js/Pages/Debts/Index.jsx",
+      "resources/js/Pages/Debts/Show.jsx",
+      "resources/js/Pages/Products/Create.jsx",
+      "resources/js/Pages/Products/Edit.jsx",
+      "resources/js/Pages/Products/Index.jsx",
+      "resources/js/Pages/Products/Show.jsx",
+      "resources/js/Pages/Reports/Debt.jsx",
+      "resources/js/Pages/Reports/Index.jsx",
+      "resources/js/Pages/Reports/Product.jsx",
+      "resources/js/Pages/Reports/Profit.jsx",
+      "resources/js/Pages/Reports/Sales.jsx",
+      "resources/js/Pages/Reports/Seller.jsx",
+      "resources/js/Pages/Sales/POS.jsx"
+    ]
+  }
+}
