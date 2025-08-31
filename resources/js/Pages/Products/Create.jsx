@@ -9,8 +9,6 @@ export default function Create() {
         purchase_price: '',
         selling_price: '',
         quantity: '',
-        category: '',
-        sku: '',
         image: null,
     });
 
@@ -141,9 +139,9 @@ export default function Create() {
                             <div className="p-6">
                                 <h3 className="text-lg font-semibold text-gray-900 mb-6">المعلومات الأساسية</h3>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 gap-6">
                                     {/* Product Name */}
-                                    <div className="md:col-span-2">
+                                    <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">
                                             اسم المنتج <span className="text-red-500">*</span>
                                         </label>
@@ -166,66 +164,8 @@ export default function Create() {
                                         )}
                                     </div>
 
-                                    {/* SKU */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            رمز المنتج (SKU)
-                                        </label>
-                                        <input
-                                            type="text"
-                                            value={data.sku}
-                                            onChange={(e) => setData('sku', e.target.value)}
-                                            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-                                                errors.sku ? 'border-red-300 bg-red-50' : 'border-gray-300'
-                                            }`}
-                                            placeholder="SKU123..."
-                                        />
-                                        {errors.sku && (
-                                            <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
-                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                                                </svg>
-                                                {errors.sku}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    {/* Category */}
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                                            الفئة
-                                        </label>
-                                        <select
-                                            value={data.category}
-                                            onChange={(e) => setData('category', e.target.value)}
-                                            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
-                                                errors.category ? 'border-red-300 bg-red-50' : 'border-gray-300'
-                                            }`}
-                                        >
-                                            <option value="">اختر الفئة...</option>
-                                            <option value="electronics">إلكترونيات</option>
-                                            <option value="clothing">ملابس</option>
-                                            <option value="home">منزل وحديقة</option>
-                                            <option value="sports">رياضة</option>
-                                            <option value="books">كتب</option>
-                                            <option value="beauty">جمال وعناية</option>
-                                            <option value="food">طعام ومشروبات</option>
-                                            <option value="toys">ألعاب</option>
-                                            <option value="automotive">سيارات</option>
-                                            <option value="other">أخرى</option>
-                                        </select>
-                                        {errors.category && (
-                                            <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
-                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                                                </svg>
-                                                {errors.category}
-                                            </p>
-                                        )}
-                                    </div>
-
                                     {/* Description */}
-                                    <div className="md:col-span-2">
+                                    <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">
                                             الوصف
                                         </label>
@@ -274,7 +214,7 @@ export default function Create() {
                                                 placeholder="0.00"
                                             />
                                             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                                <span className="text-gray-500 text-sm">ريال</span>
+                                                <span className="text-gray-500 text-sm">دينار</span>
                                             </div>
                                         </div>
                                         {errors.purchase_price && (
@@ -304,7 +244,7 @@ export default function Create() {
                                                 placeholder="0.00"
                                             />
                                             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                                <span className="text-gray-500 text-sm">ريال</span>
+                                                <span className="text-gray-500 text-sm">دينار</span>
                                             </div>
                                         </div>
                                         {errors.selling_price && (
@@ -318,7 +258,7 @@ export default function Create() {
                                     </div>
 
                                     {/* Quantity */}
-                                    <div className="md:col-span-2">
+                                    <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-2">
                                             الكمية <span className="text-red-500">*</span>
                                         </label>
