@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Head, Link, usePage, router } from '@inertiajs/react';
+import PWAInstallPrompt from '@/Components/PWAInstallPrompt';
+import usePWA from '@/Hooks/usePWA';
 
 export default function AppLayout({ children, title = 'marcetime - نظام إدارة المخزون' }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [showPWAPrompt, setShowPWAPrompt] = useState(false);
     const { url, props } = usePage();
+    const { isInstallable, isInstalled } = usePWA();
 
     // الحصول على بيانات المستخدم من session
     const user = props.auth?.user || null;
@@ -35,6 +39,23 @@ export default function AppLayout({ children, title = 'marcetime - نظام إد
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
+
+    // PWA Install Prompt Logic
+    useEffect(() => {
+        // Show PWA install prompt after user is logged in and app is installable
+        if (user && isInstallable && !isInstalled) {
+            const hasShownPrompt = sessionStorage.getItem('pwa-prompt-shown');
+            if (!hasShownPrompt) {
+                // Show prompt after 3 seconds of being on dashboard
+                const timer = setTimeout(() => {
+                    setShowPWAPrompt(true);
+                    sessionStorage.setItem('pwa-prompt-shown', 'true');
+                }, 3000);
+
+                return () => clearTimeout(timer);
+            }
+        }
+    }, [user, isInstallable, isInstalled]);
 
     const navigation = [
         {
@@ -344,6 +365,11 @@ export default function AppLayout({ children, title = 'marcetime - نظام إد
                     </div>
                 </main>
             </div>
+
+            {/* PWA Install Prompt */}
+            {showPWAPrompt && (
+                <PWAInstallPrompt />
+            )}
         </div>
     );
 }

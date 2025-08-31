@@ -54,3 +54,22 @@ Route::middleware('auth')->group(function () {
         return inertia('Settings/Index');
     })->name('settings.index');
 });
+
+// PWA Routes
+Route::get('/manifest.json', function() {
+    return response()->file(public_path('manifest.json'), [
+        'Content-Type' => 'application/json'
+    ]);
+});
+
+Route::get('/sw.js', function() {
+    return response()->file(public_path('sw.js'), [
+        'Content-Type' => 'application/javascript'
+    ]);
+});
+
+Route::get('/browserconfig.xml', function() {
+    return response()->file(public_path('browserconfig.xml'), [
+        'Content-Type' => 'application/xml'
+    ]);
+});
