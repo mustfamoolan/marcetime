@@ -1,20 +1,20 @@
 {
-  "_AppLayout-DpXWN4zK.js": {
-    "file": "assets/AppLayout-DpXWN4zK.js",
+  "_AppLayout-Dj36bdM3.js": {
+    "file": "assets/AppLayout-Dj36bdM3.js",
     "name": "AppLayout",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_ClockIcon-DMFs0O7_.js": {
-    "file": "assets/ClockIcon-DMFs0O7_.js",
+  "_ClockIcon-CZvI0374.js": {
+    "file": "assets/ClockIcon-CZvI0374.js",
     "name": "ClockIcon",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_CurrencyDollarIcon-hN7WoX3h.js": {
-    "file": "assets/CurrencyDollarIcon-hN7WoX3h.js",
+  "_CurrencyDollarIcon-B_Tuih6g.js": {
+    "file": "assets/CurrencyDollarIcon-B_Tuih6g.js",
     "name": "CurrencyDollarIcon",
     "imports": [
       "resources/js/app.jsx"
@@ -29,7 +29,7 @@
     ]
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-CSxvqSFv.js",
+    "file": "assets/Login-C_33c_ql.js",
     "name": "Login",
     "src": "resources/js/Pages/Auth/Login.jsx",
     "isDynamicEntry": true,
@@ -38,172 +38,172 @@
     ]
   },
   "resources/js/Pages/Balance/Index.jsx": {
-    "file": "assets/Index-Bv5sCqHJ.js",
+    "file": "assets/Index-gMp4OAzD.js",
     "name": "Index",
     "src": "resources/js/Pages/Balance/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js",
-      "_ClockIcon-DMFs0O7_.js"
+      "_AppLayout-Dj36bdM3.js",
+      "_ClockIcon-CZvI0374.js"
     ]
   },
   "resources/js/Pages/Balance/Withdrawals.jsx": {
-    "file": "assets/Withdrawals-CX4khKD_.js",
+    "file": "assets/Withdrawals-CGS6XupB.js",
     "name": "Withdrawals",
     "src": "resources/js/Pages/Balance/Withdrawals.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js",
-      "_ClockIcon-DMFs0O7_.js"
+      "_AppLayout-Dj36bdM3.js",
+      "_ClockIcon-CZvI0374.js"
     ]
   },
   "resources/js/Pages/Dashboard.jsx": {
-    "file": "assets/Dashboard-eebj_L94.js",
+    "file": "assets/Dashboard-kHDGsCPb.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Dashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Debts/Index.jsx": {
-    "file": "assets/Index-CaecPCXJ.js",
+    "file": "assets/Index-BVko3297.js",
     "name": "Index",
     "src": "resources/js/Pages/Debts/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Debts/Show.jsx": {
-    "file": "assets/Show-Q7zHaU8k.js",
+    "file": "assets/Show-CmE1D8pq.js",
     "name": "Show",
     "src": "resources/js/Pages/Debts/Show.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Products/Create.jsx": {
-    "file": "assets/Create-DxnLa-F_.js",
+    "file": "assets/Create-CiSNYtHv.js",
     "name": "Create",
     "src": "resources/js/Pages/Products/Create.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Products/Edit.jsx": {
-    "file": "assets/Edit-ag5um8iT.js",
+    "file": "assets/Edit-Dqz3VKzu.js",
     "name": "Edit",
     "src": "resources/js/Pages/Products/Edit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Products/Index.jsx": {
-    "file": "assets/Index-CgJBdMRZ.js",
+    "file": "assets/Index-BaBcz3l8.js",
     "name": "Index",
     "src": "resources/js/Pages/Products/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Products/Show.jsx": {
-    "file": "assets/Show-C6kre55-.js",
+    "file": "assets/Show-D0K8KQug.js",
     "name": "Show",
     "src": "resources/js/Pages/Products/Show.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Reports/Debt.jsx": {
-    "file": "assets/Debt-DcPo9K9k.js",
+    "file": "assets/Debt-trcwrATN.js",
     "name": "Debt",
     "src": "resources/js/Pages/Reports/Debt.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Reports/Index.jsx": {
-    "file": "assets/Index-DGeWFR6j.js",
+    "file": "assets/Index-wIpr1dSs.js",
     "name": "Index",
     "src": "resources/js/Pages/Reports/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js",
-      "_CurrencyDollarIcon-hN7WoX3h.js",
-      "_ClockIcon-DMFs0O7_.js"
+      "_AppLayout-Dj36bdM3.js",
+      "_CurrencyDollarIcon-B_Tuih6g.js",
+      "_ClockIcon-CZvI0374.js"
     ]
   },
   "resources/js/Pages/Reports/Product.jsx": {
-    "file": "assets/Product-gM-C3Bzr.js",
+    "file": "assets/Product-BjXReAvW.js",
     "name": "Product",
     "src": "resources/js/Pages/Reports/Product.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Reports/Profit.jsx": {
-    "file": "assets/Profit-D2rnK8ct.js",
+    "file": "assets/Profit-C_5wFTPE.js",
     "name": "Profit",
     "src": "resources/js/Pages/Reports/Profit.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Reports/Sales.jsx": {
-    "file": "assets/Sales-CAtea7MH.js",
+    "file": "assets/Sales-Dxh9Lq5b.js",
     "name": "Sales",
     "src": "resources/js/Pages/Reports/Sales.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js",
-      "_CurrencyDollarIcon-hN7WoX3h.js"
+      "_AppLayout-Dj36bdM3.js",
+      "_CurrencyDollarIcon-B_Tuih6g.js"
     ]
   },
   "resources/js/Pages/Reports/Seller.jsx": {
-    "file": "assets/Seller-DJ7SxGt9.js",
+    "file": "assets/Seller-Nol9PgcD.js",
     "name": "Seller",
     "src": "resources/js/Pages/Reports/Seller.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/Pages/Sales/POS.jsx": {
-    "file": "assets/POS-BPt9LNWi.js",
+    "file": "assets/POS-CZ124gDs.js",
     "name": "POS",
     "src": "resources/js/Pages/Sales/POS.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AppLayout-DpXWN4zK.js"
+      "_AppLayout-Dj36bdM3.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-DlAS7V7A.js",
+    "file": "assets/app-BMOinr9P.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,

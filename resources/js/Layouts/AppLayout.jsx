@@ -163,7 +163,7 @@ export default function AppLayout({ children, title = 'مارسيتايم - نظ
                                         {user?.name || 'مستخدم النظام'}
                                     </p>
                                     <p className="text-xs text-gray-500">
-                                        {user?.role === 'manager' ? 'مدير - 70% أرباح' : 'شريك - 30% أرباح'}
+                                        {user?.role === 'manager' ? 'مدير النظام' : 'شريك'}
                                     </p>
                                 </div>
                                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold">
