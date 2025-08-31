@@ -6,17 +6,17 @@ export function usePWA() {
     const [deferredPrompt, setDeferredPrompt] = useState(null);
 
     useEffect(() => {
-        // Register service worker
+        // Register service worker immediately
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('SW registered successfully: ', registration);
+                })
+                .catch((registrationError) => {
+                    console.error('SW registration failed: ', registrationError);
+                });
+        } else {
+            console.log('Service Worker not supported');
         }
 
         // Check if app is already installed
@@ -25,6 +25,7 @@ export function usePWA() {
             const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             const isIOSInstalled = iOS && standalone;
 
+            console.log('Install check:', { standalone, iOS, isIOSInstalled });
             setIsInstalled(standalone || isIOSInstalled);
         };
 
@@ -32,23 +33,34 @@ export function usePWA() {
 
         // Listen for beforeinstallprompt event
         const handleBeforeInstallPrompt = (e) => {
+            console.log('beforeinstallprompt event fired');
             e.preventDefault();
             setDeferredPrompt(e);
             setIsInstallable(true);
         };
 
-        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
         // Listen for appinstalled event
-        window.addEventListener('appinstalled', () => {
+        const handleAppInstalled = () => {
+            console.log('PWA was installed successfully');
             setIsInstalled(true);
             setIsInstallable(false);
             setDeferredPrompt(null);
-            console.log('PWA was installed');
-        });
+        };
+
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        window.addEventListener('appinstalled', handleAppInstalled);
+
+        // For some browsers, check if install is possible
+        setTimeout(() => {
+            if (!deferredPrompt) {
+                console.log('No beforeinstallprompt event, checking if installable manually');
+                setIsInstallable(true); // Show prompt anyway for manual install
+            }
+        }, 1000);
 
         return () => {
             window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+            window.removeEventListener('appinstalled', handleAppInstalled);
         };
     }, []);
 

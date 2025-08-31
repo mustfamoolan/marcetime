@@ -31,14 +31,29 @@ export default function PWAInstallPrompt({ onDismiss }) {
     }, []);
 
     const handleInstall = async () => {
+        console.log('Install button clicked, deferredPrompt:', !!deferredPrompt);
+
         if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            console.log('Install prompt result:', outcome);
-            if (outcome === 'accepted') {
-                setDeferredPrompt(null);
-                if (onDismiss) onDismiss();
+            try {
+                console.log('Showing install prompt...');
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log('Install prompt result:', outcome);
+
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                    setDeferredPrompt(null);
+                    if (onDismiss) onDismiss();
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+            } catch (error) {
+                console.error('Error during install prompt:', error);
             }
+        } else {
+            console.log('No deferredPrompt available, showing manual instructions');
+            // إذا لم يكن هناك deferredPrompt، اظهر تعليمات يدوية
+            alert('لتثبيت التطبيق:\n1. اضغط على قائمة المتصفح (⋮)\n2. اختر "إضافة إلى الشاشة الرئيسية"\n3. اضغط "إضافة"');
         }
     };
 
@@ -130,12 +145,22 @@ export default function PWAInstallPrompt({ onDismiss }) {
                         </div>
                     </div>
                 ) : (
-                    <button
-                        onClick={handleInstall}
-                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                    >
-                        تثبيت التطبيق الآن
-                    </button>
+                    <div className="space-y-3">
+                        <button
+                            onClick={handleInstall}
+                            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                            {deferredPrompt ? 'تثبيت التطبيق الآن' : 'عرض تعليمات التثبيت'}
+                        </button>
+
+                        {!deferredPrompt && (
+                            <div className="bg-blue-50 rounded-2xl p-4 text-center">
+                                <p className="text-sm text-blue-700">
+                                    أو اضغط على قائمة المتصفح (⋮) واختر "إضافة إلى الشاشة الرئيسية"
+                                </p>
+                            </div>
+                        )}
+                    </div>
                 )}
 
                 {!isIOS && (
